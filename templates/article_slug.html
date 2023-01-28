@@ -1,0 +1,21 @@
+{% load my_app_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div style="padding: 20px; background-color:#D3D3D3;"> This is an article № {{article_id}}
+        {% if article_id|divisibleby:"2" %} <span> The article's number is even.</span>
+        {%else%} <span>The article's number is odd.</span>
+        {%endif%}
+        <p>This is an article with slug-text: {{slug_text}}</p>
+        </div>
+        <div><a href="{% url 'index' %}">To the first page.</a></div>
+    </div>
+</body>
+</html>

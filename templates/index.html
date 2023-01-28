@@ -1,0 +1,28 @@
+{% load my_app_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main page</title>
+</head>
+<body>
+<div><h3>It's your main view!</h3></div>
+<div style="padding: 20px; background-color: #FFEBCD">
+    <a href="{% url 'articles' %}">To the list of articles.</a>
+</div>
+<div style="padding: 20px; background-color:#E0FFFF">
+    <a href="{% url 'articles_archive' %}">To the list of articles archive.</a>
+</div>
+<div style="padding: 20px; background-color:#DCDCDC">
+    <a href="{% url 'users' %}">To the list of users.</a>
+</div>
+<div style="padding: 20px; background-color:#E6E6FA;">
+    {%randomnum as num%}
+    <a href="{% url 'article_id' num %}" > To the article #</a>
+</div>
+<div style="padding: 20px; background-color:#D3D3D3;">
+    {%randomslug as text%}
+    <a href="{% url 'article_slug' num text %}" > To the article with slug-text</a>
+</div>
+</body>
+</html>
